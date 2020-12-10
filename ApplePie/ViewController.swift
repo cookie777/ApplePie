@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
   
   
@@ -24,7 +25,6 @@ class ViewController: UIViewController {
     let tv =  UIImageView(image: UIImage(named: "Tree 7"))
     tv.translatesAutoresizingMaskIntoConstraints = false
     tv.contentMode = .scaleAspectFit
-    tv.backgroundColor = .green
     return tv
   }()
   
@@ -61,7 +61,6 @@ class ViewController: UIViewController {
     st.translatesAutoresizingMaskIntoConstraints = false
     st.axis = .vertical
     st.alignment = .center
-    st.backgroundColor = .orange
 
     st.isLayoutMarginsRelativeArrangement = true
     st.distribution = .fillEqually
@@ -81,7 +80,7 @@ class ViewController: UIViewController {
     let lb = UILabel()
     lb.translatesAutoresizingMaskIntoConstraints = false
     lb.text = ""
-    lb.backgroundColor = .red
+    lb.font = .systemFont(ofSize: 32)
     return lb
   }()
   
@@ -90,7 +89,7 @@ class ViewController: UIViewController {
     let lb = UILabel()
     lb.translatesAutoresizingMaskIntoConstraints = false
     lb.text = "Wins: , Losses: "
-    lb.backgroundColor = .red
+    lb.font = .systemFont(ofSize: 32)
     return lb
   }()
   
@@ -100,7 +99,6 @@ class ViewController: UIViewController {
     sv.translatesAutoresizingMaskIntoConstraints = false
     sv.axis = .vertical
     sv.alignment = .center
-    sv.backgroundColor = .orange
 
     sv.isLayoutMarginsRelativeArrangement = true
     sv.distribution = .fillEqually
@@ -296,11 +294,11 @@ class ViewController: UIViewController {
     for str in strSet{
       let bt = UIButton()
       bt.translatesAutoresizingMaskIntoConstraints = false
+      bt.titleLabel?.font = .systemFont(ofSize: 32)
       bt.setTitle(str, for: .normal)
       bt.setTitleColor(.cyan, for: .normal)
       bt.setTitleColor(.blue, for: .highlighted)
       bt.addTarget(self, action: #selector(letterButtonPressed), for: .touchUpInside)
-      bt.backgroundColor  = .blue
       bts += [bt]
     }
     
@@ -309,7 +307,6 @@ class ViewController: UIViewController {
     st.translatesAutoresizingMaskIntoConstraints = false
     st.axis = .horizontal
     st.alignment = .center
-    st.backgroundColor = .red
     st.distribution = .fillEqually
     
     st.isLayoutMarginsRelativeArrangement = true
@@ -336,59 +333,4 @@ class ViewController: UIViewController {
     updateGameState()
   }
   
-  
-  
-
 }
-//
-//
-//lazy var keyboardStackView: UIStackView = {
-//
-//  let strSets : [[String]] = [strSet1,strSet2,strSet3]
-//
-//  var keyboardStackView = UIStackView()
-//
-//  var keyboardSubViews:[UIStackView] = []
-//  for strSet in strSets{
-//
-//    var LineSubViews:[UIView] = []
-//    for str in strSet{
-//      let bt = UIButton()
-////        keyButton.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-//      bt.translatesAutoresizingMaskIntoConstraints = false
-//      bt.setTitle(str, for: .normal)
-//      bt.setTitleColor(.cyan, for: .normal)
-//      bt.setTitleColor(.blue, for: .highlighted)
-//      bt.addTarget(self, action: #selector(letterButtonPressed), for: .touchUpInside)
-//      bt.backgroundColor  = .blue
-//      LineSubViews += [bt]
-//
-//    }
-//
-//    let LineStackView = UIStackView(arrangedSubviews: LineSubViews)
-//    LineStackView.translatesAutoresizingMaskIntoConstraints = false
-//    LineStackView.axis = .horizontal
-//    LineStackView.alignment = .center
-//    LineStackView.backgroundColor = .red
-//    LineStackView.distribution = .fillEqually
-//
-//    LineStackView.isLayoutMarginsRelativeArrangement = true
-//    LineStackView.spacing = 16
-//    LineStackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
-//
-//    keyboardSubViews += [LineStackView]
-//  }
-//
-//  keyboardStackView = UIStackView(arrangedSubviews: keyboardSubViews)
-//  keyboardStackView.translatesAutoresizingMaskIntoConstraints = false
-//  keyboardStackView.axis = .vertical
-//  keyboardStackView.alignment = .center
-//  keyboardStackView.backgroundColor = .orange
-//
-//  keyboardStackView.isLayoutMarginsRelativeArrangement = true
-//  keyboardStackView.distribution = .fillEqually
-//  keyboardStackView.spacing = 16
-//  keyboardStackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
-//  return keyboardStackView
-//
-//}()
